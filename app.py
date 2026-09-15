@@ -433,23 +433,18 @@ for p in pages:
 
 page = st.session_state.page
 
-    st.divider()
+st.divider()
 
-    if st.session_state.pdf_text:
+if st.session_state.pdf_text:
+    st.success("📄 Material loaded")
+    st.caption(st.session_state.file_name)
+else:
+    st.info("Upload study material to begin.")
 
-        st.success(
-            "📄 Material loaded"
-        )
 
-        st.caption(
-            st.session_state.file_name
-        )
-
-    else:
-
-        st.info(
-            "Upload study material to begin."
-        )
+# =========================================================
+# HEADER
+# =========================================================
 
 
 # =========================================================
