@@ -20,72 +20,120 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-.main {
-    background-color: #f7f8fc;
+/* Main background */
+.stApp {
+    background: #f7f8fc;
+    color: #1f2937;
 }
 
-.block-container {
+/* Main content */
+.main .block-container {
     padding-top: 2rem;
-    padding-bottom: 2rem;
-    max-width: 1200px;
+    padding-bottom: 3rem;
 }
 
-/* Header */
-
+/* Hero */
 .hero {
-    padding: 30px;
-    border-radius: 20px;
-    background: linear-gradient(
-        135deg,
-        #eef2ff,
-        #f5f3ff
-    );
-    border: 1px solid #e0e7ff;
-    margin-bottom: 25px;
+    background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+    padding: 35px;
+    border-radius: 24px;
+    margin-bottom: 35px;
+    border: 1px solid #e5e7eb;
 }
 
-.hero-title {
-    font-size: 38px;
-    font-weight: 700;
-    margin-bottom: 5px;
+.hero h1 {
+    color: #111827 !important;
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
-.hero-subtitle {
-    font-size: 17px;
-    color: #555;
+.hero p {
+    color: #4b5563 !important;
+    font-size: 18px;
+}
+
+/* Section headings */
+h1, h2, h3, h4 {
+    color: #111827 !important;
+}
+
+/* Normal text */
+p, label, span, div {
+    color: #1f2937;
 }
 
 /* Cards */
-
 .card {
     background: white;
-    padding: 22px;
-    border-radius: 18px;
+    padding: 28px;
+    border-radius: 20px;
     border: 1px solid #e5e7eb;
-    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    min-height: 160px;
+}
+
+.card h3 {
+    color: #111827 !important;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #4b5563 !important;
 }
 
 /* Buttons */
-
 .stButton > button {
+    width: 100%;
     border-radius: 12px;
-    height: 45px;
+    border: 1px solid #d1d5db;
+    padding: 12px 18px;
     font-weight: 600;
+    background: white;
+    color: #111827 !important;
+}
+
+.stButton > button:hover {
+    border-color: #6366f1;
+    color: #4f46e5 !important;
 }
 
 /* Sidebar */
-
 section[data-testid="stSidebar"] {
-    background-color: #ffffff;
+    background: #ffffff;
 }
 
-/* Section titles */
+section[data-testid="stSidebar"] * {
+    color: #1f2937 !important;
+}
 
-.section-title {
-    font-size: 25px;
-    font-weight: 650;
-    margin-top: 15px;
-    margin-bottom: 15px;
+/* Inputs */
+input, textarea {
+    color: #111827 !important;
+    background: white !important;
+}
+
+/* Select boxes */
+div[data-baseweb="select"] {
+    color: #111827 !important;
+}
+
+/* File uploader */
+section[data-testid="stFileUploader"] {
+    background: white;
+    border-radius: 15px;
+}
+
+/* Info boxes */
+.stAlert {
+    border-radius: 12px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    color: #6b7280 !important;
+    padding: 30px;
+    margin-top: 40px;
 }
 
 </style>
