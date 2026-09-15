@@ -409,7 +409,7 @@ with st.sidebar:
 
     st.divider()
 
-   st.sidebar.markdown("### Navigation")
+st.sidebar.markdown("### Navigation")
 
 pages = [
     "🏠 Dashboard",
