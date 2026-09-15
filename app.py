@@ -20,120 +20,188 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* Main background */
+/* ===== GLOBAL DARK THEME ===== */
+
 .stApp {
-    background: #f7f8fc;
-    color: #1f2937;
+    background: #0b0f14;
+    color: #f5f5f5;
 }
 
-/* Main content */
 .main .block-container {
     padding-top: 2rem;
     padding-bottom: 3rem;
 }
 
-/* Hero */
+/* ===== HERO ===== */
+
 .hero {
-    background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+    background: linear-gradient(135deg, #151b25, #10151d);
     padding: 35px;
     border-radius: 24px;
     margin-bottom: 35px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #252d3a;
 }
 
 .hero h1 {
-    color: #111827 !important;
+    color: #ffffff !important;
     font-size: 42px;
     margin-bottom: 10px;
 }
 
 .hero p {
-    color: #4b5563 !important;
+    color: #b8c0cc !important;
     font-size: 18px;
 }
 
-/* Section headings */
+/* ===== HEADINGS ===== */
+
 h1, h2, h3, h4 {
-    color: #111827 !important;
+    color: #ffffff !important;
 }
 
-/* Normal text */
-p, label, span, div {
-    color: #1f2937;
+/* ===== NORMAL TEXT ===== */
+
+p {
+    color: #d1d5db !important;
 }
 
-/* Cards */
+label {
+    color: #e5e7eb !important;
+}
+
+/* ===== DASHBOARD CARDS ===== */
+
 .card {
-    background: white;
+    background: #151a22;
     padding: 28px;
     border-radius: 20px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #29313d;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
     min-height: 160px;
 }
 
 .card h3 {
-    color: #111827 !important;
+    color: #ffffff !important;
     margin-bottom: 12px;
 }
 
 .card p {
-    color: #4b5563 !important;
+    color: #b9c0ca !important;
 }
 
-/* Buttons */
+/* ===== BUTTONS ===== */
+
 .stButton > button {
     width: 100%;
     border-radius: 12px;
-    border: 1px solid #d1d5db;
+    border: 1px solid #343d4a;
     padding: 12px 18px;
     font-weight: 600;
-    background: white;
-    color: #111827 !important;
+    background: #171d26;
+    color: #ffffff !important;
 }
 
 .stButton > button:hover {
-    border-color: #6366f1;
-    color: #4f46e5 !important;
+    border-color: #7c83ff;
+    background: #202735;
+    color: #ffffff !important;
 }
 
-/* Sidebar */
+/* ===== SIDEBAR ===== */
+
 section[data-testid="stSidebar"] {
-    background: #ffffff;
+    background: #090d12;
 }
 
 section[data-testid="stSidebar"] * {
-    color: #1f2937 !important;
+    color: #f5f5f5 !important;
 }
 
-/* Inputs */
-input, textarea {
-    color: #111827 !important;
-    background: white !important;
+/* ===== INPUT BOXES ===== */
+
+input,
+textarea {
+    color: #ffffff !important;
+    background: #151a22 !important;
+    border: 1px solid #343d4a !important;
 }
 
-/* Select boxes */
+/* ===== SELECT BOX ===== */
+
 div[data-baseweb="select"] {
-    color: #111827 !important;
+    background: #151a22 !important;
+    color: #ffffff !important;
 }
 
-/* File uploader */
+div[data-baseweb="select"] * {
+    color: #ffffff !important;
+}
+
+/* ===== NUMBER INPUT ===== */
+
+div[data-testid="stNumberInput"] input {
+    background: #151a22 !important;
+    color: #ffffff !important;
+}
+
+/* ===== FILE UPLOADER ===== */
+
 section[data-testid="stFileUploader"] {
-    background: white;
+    background: #151a22;
+    border: 1px solid #343d4a;
     border-radius: 15px;
 }
 
-/* Info boxes */
+section[data-testid="stFileUploader"] * {
+    color: #e5e7eb !important;
+}
+
+/* ===== TEXT AREA ===== */
+
+textarea {
+    background: #151a22 !important;
+    color: #ffffff !important;
+}
+
+/* ===== ALERTS ===== */
+
 .stAlert {
     border-radius: 12px;
 }
 
-/* Footer */
+/* ===== DIVIDERS ===== */
+
+hr {
+    border-color: #29313d;
+}
+
+/* ===== FOOTER ===== */
+
 .footer {
     text-align: center;
-    color: #6b7280 !important;
+    color: #7f8793 !important;
     padding: 30px;
     margin-top: 40px;
+}
+/* ===== SIDEBAR NAVIGATION BUTTONS ===== */
+
+section[data-testid="stSidebar"] .stButton > button {
+    width: 100%;
+    text-align: left;
+    background: #11161d;
+    color: #e5e7eb !important;
+    border: 1px solid #252d38;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+section[data-testid="stSidebar"] .stButton > button:hover {
+    background: #1c2430;
+    border-color: #6366f1;
+    color: #ffffff !important;
 }
 
 </style>
@@ -341,17 +409,29 @@ with st.sidebar:
 
     st.divider()
 
-    page = st.radio(
-        "Navigation",
-        [
-            "🏠 Dashboard",
-            "📚 Study Material",
-            "🤖 AI Tutor",
-            "❓ Quiz",
-            "📅 Smart Timetable",
-            "📊 Study Report"
-        ]
-    )
+   st.sidebar.markdown("### Navigation")
+
+pages = [
+    "🏠 Dashboard",
+    "📚 Study Material",
+    "🤖 AI Tutor",
+    "❓ Quiz",
+    "📅 Smart Timetable",
+    "📊 Study Report"
+]
+
+if "page" not in st.session_state:
+    st.session_state.page = "🏠 Dashboard"
+
+for p in pages:
+    if st.sidebar.button(
+        p,
+        key="nav_" + p,
+        use_container_width=True
+    ):
+        st.session_state.page = p
+
+page = st.session_state.page
 
     st.divider()
 
