@@ -11,7 +11,7 @@ It also helps students plan their preparation with **personalized study timetabl
 ## 🚀 Live App
 
 🔗 **Try AI StudyMate:**  
-https://ai-studymate.streamlit.app/
+ https://ai-studymate-6nhgb23n4f8ss3drje6s5x.streamlit.app/
 
 ## 🛠️ Built With
 
